@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Discord Data Package Wordcloud Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  </head>
+
+  <body class="bg-dark text-white">
+    <div class="text-center">
+      <h1 class="mt-5">Discord Data Message Wordcloud Generator</h1>
+      <form method="POST" enctype="multipart/form-data">
+        <label for="formFile" class="form-label mt-3">Please upload your file</label>
+
+        <div class="mb-3 w-100">
+          <input class="form-control w-50 mx-auto" type="file" id="formFile" name="file" />
+        </div>
+
+        <button type="submit" class="btn btn-outline-info btn-lg">Generate</button>
+      </form>
+    </div>
+    {% if wordcloud_url %}
+      <!-- stuff like this is for logic based things using jinja2 syntax such as if statements -->
+      <div class="text-center mb-5">
+        <br></br>
+        <h3>Generated Wordcloud</h3>
+        <img src="{{ wordcloud_url }}" alt="Wordcloud could not load" />
+      </div>
+    {% endif %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
