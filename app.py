@@ -3,7 +3,7 @@ from wordcloud import WordCloud, STOPWORDS
 from flask import Flask, request, render_template
 import zipfile
 import ijson
-import shutil 
+import shutil
 
 app = Flask(__name__)
 
@@ -61,12 +61,15 @@ def index():
         if messages_json_paths:
             for json_path in messages_json_paths:
                 with open(json_path, "r", encoding="utf-8") as json_file:
-                    for msg in ijson.items(json_file, "item"):
-                        if "Contents" in msg:
-                            message = msg["Contents"].strip()
-        if message:
-            total_messages.append(message)
-                    
+                    total_messages.extend(
+                        [
+                            msg["Contents"].strip()
+                            for msg in ijson.items(json_file, "item")
+                            if msg.get("Contents", "").strip()
+                        ]
+                    )
+            
+            print("Extracted Messages:", total_messages[:10])  # Print the first 10 messages
             text_string = " ".join(total_messages)
 
             stopwords = {
@@ -201,6 +204,8 @@ def index():
                 "https",
                 "wa",
                 "http",
+                "wg",
+                "wg wg"
             }
 
             # Generate and save word cloud
