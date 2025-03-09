@@ -1,24 +1,34 @@
 # Discord-Data-Package-Message-Wordcloud-Generator
-Web page that generates a wordcloud based on messages from your discord data package. 
+Web app that allows you to generates wordcloud based on messages from your discord data package. 
 
 
-# How to use
-1. Request a copy of your discord data (Discord may take up to 30 days to email this). Further instructions are here https://support.discord.com/hc/en-us/articles/360004027692-Requesting-a-Copy-of-your-Data
-  
-3. Clone the Repository
+# Installation and setup
+1. Clone the Repository
    git clone https://github.com/ikejimee/Discord-Data-Package-Message-Wordcloud-Generator.git
    cd Discord-Data-Package-Message-Worldcloud-Generator
-4. Install Dependencies
+   
+3. Install Dependencies
    ```bash
    pip install -r requirements.txt
-6. Run the Flask App
+4. Run the Flask App
    ```bash
    python app.py
 8. Open the web app in browser
    ```bash
    http://127.0.0.1:5000
-10. Upload your discord data package zip file to the web app
-11. Wait for the wordcloud to generate and enjoy!
+
+# How to use
+1. Request a copy of your discord data (Discord may take up to 30 days to email this). Further instructions are here https://support.discord.com/hc/en-us/articles/360004027692-Requesting-a-Copy-of-your-Data
+   
+3. Run the Flask App
+   ```bash
+   python app.py
+4. Open the web app in browser
+   ```bash
+   http://127.0.0.1:5000
+5. Upload your discord data package zip file to the web app
+   
+7. Generate the wordcloud and enjoy!
 
 # Further Improvements
 1. Allow users to download a .png file of the wordcloud
