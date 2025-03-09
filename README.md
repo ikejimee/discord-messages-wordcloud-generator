@@ -6,7 +6,7 @@ Web app that allows you to generates wordcloud based on messages from your disco
 1. Clone the Repository
    ```bash
    git clone https://github.com/ikejimee/discord-messages-wordcloud-generator.git
-   cd Discord-Data-Package-Message-Worldcloud-Generator
+   cd discord-messages-wordcloud-generator
    
 3. Install Dependencies
    ```bash
